@@ -65,10 +65,10 @@ export default function App() {
     { name: 'Tailwind CSS', icon: Palette, level: 90, color: 'from-purple-400 to-pink-500' },     
     { name: 'TypeScript', icon: Code, level: 90, color: 'from-blue-400 to-indigo-500' },
     { name: 'Node.js', icon: Server, level: 70, color: 'from-green-400 to-emerald-500' },
-    { name: 'Next.js', icon: Globe, level: 60, color: 'from-gray-400 to-gray-600' },
+    // { name: 'Next.js', icon: Globe, level: 60, color: 'from-gray-400 to-gray-600' },
     { name: 'Python', icon: Code, level: 80, color: 'from-yellow-400 to-orange-500' },
     { name: 'SQL/Postgres/MongoDB', icon: Database, level: 75, color: 'from-orange-400 to-red-500' },
-    { name: 'UI/UX Design', icon: Palette, level: 85, color: 'from-purple-400 to-pink-500' },
+    // { name: 'UI/UX Design', icon: Palette, level: 85, color: 'from-purple-400 to-pink-500' },
   ];
 
   const projects = [
@@ -81,8 +81,8 @@ export default function App() {
       github: 'https://github.com/DPMK48/ByteRaiders-AMS.git'
     },
     {
-      title: 'URL Phising Detection',
-      description: 'This project project is a full-stack web application that detects phishing URLs using rule-based heuristics, stores logs in a database, and allows users to download logs as a CSV.',
+      title: 'URL Phishing Detection',
+      description: 'This project is a full-stack web application that detects phishing URLs using rule-based heuristics, stores logs in a database, and allows users to download logs as a CSV.',
       image: '/purl-screenshot.png',
       tech: ['React', 'Tailwind CSS', 'SQLite', 'Flask'],
       live: 'https://url-phishing-detection-frontend.onrender.com/',
@@ -90,7 +90,7 @@ export default function App() {
     },
     {
       title: 'Oculo',
-      description: 'Oculo is built for mitigating media literacy and misinformation.',
+      description: 'Oculo is a progressive web app built for mitigating media literacy and misinformation, and an embedded chat bot (Izita) for verifying news/information.',
       image: '/oculo-screenshot.png',
       tech: ['React', 'Tailwind CSS', 'Django', 'Postgres'],
       live: 'https://oculo-tawny.vercel.app/',
@@ -140,9 +140,10 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-x-hidden">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       {/* Navigation */}
@@ -291,6 +292,16 @@ export default function App() {
             transition={{ repeat: Infinity, duration: 3.5, delay: 2 }}
             className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"
           />
+          <motion.div
+            animate={{ y: [0, -30, 0] }}
+            transition={{ repeat: Infinity, duration: 3.5, delay: 2 }}
+            className="absolute top-[20%] left-1/3 w-5 h-5 bg-emerald-400 rounded-full shadow-lg shadow-emerald-400/50"
+          />
+          <motion.div
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 3.5, delay: 2 }}
+            className="absolute bottom-1/3 right-1/4 w-4 h-4 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"
+          />
         </div>
       </section>
 
@@ -314,7 +325,7 @@ export default function App() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex justify-center flex-wrap w-[100%] gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -323,7 +334,7 @@ export default function App() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="group"
+                className="group w-[100%] sm:w-[25%]"
               >
                 <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/10">
                   <CardContent className="p-6 text-center">
@@ -373,7 +384,7 @@ export default function App() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center w-[100%] gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -382,9 +393,9 @@ export default function App() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="group"
+                className="group sm:w-[30%] "
               >
-                <Card className="bg-gray-800/50 h-[200px] backdrop-blur-sm border-gray-700 overflow-hidden hover:border-emerald-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/10">
+                <Card className="bg-gray-800/50 h-[450px] backdrop-blur-sm border-gray-700 overflow-hidden hover:border-emerald-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/10">
                   <div className="relative overflow-hidden">
                     <ImageWithFallback
                       src={project.image}
@@ -392,7 +403,7 @@ export default function App() {
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 right-4 flex space-x-2 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                       <Button
                         size="sm"
                         className="bg-white/20 backdrop-blur-sm hover:bg-white/30"
@@ -409,7 +420,7 @@ export default function App() {
                       </Button>
                     </div>
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-4">
                     <h3 className="text-xl text-white font-semibold mb-3">{project.title}</h3>
                     <p className="text-gray-400 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
