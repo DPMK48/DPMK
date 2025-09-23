@@ -403,7 +403,7 @@ export default function App() {
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 right-4 flex space-x-2 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 right-4 flex space-x-2 opacity-20 group-hover:opacity-100 transition-opacity duration-300">
                       <Button
                         size="sm"
                         className="bg-white/20 backdrop-blur-sm hover:bg-white/30"
@@ -635,12 +635,9 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-gray-700/50 bg-gray-900/50 backdrop-blur-sm">
         <div className="container mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex  md:flex-row items-center justify-center">
             <p className="text-gray-400 mb-4 md:mb-0">
               © 2025 Dorathy Paul, All rights reserved.
-            </p>
-            <p className="text-gray-400">
-              Built with React, TypeScript & Tailwind CSS
             </p>
           </div>
         </div>
